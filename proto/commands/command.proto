@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package commands;
+
+option go_package = "github.com/missingtrailingcomma/gummybear-proto/gen/go/commands";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message CommandList {
+  repeated Command commands = 1;
+}
+
+message Command {
+  // Parent table primary key.
+  // External reference to Customer.id.
+  string customer_id = 11;
+
+  string id = 1;
+  string db_internal_id = 2;
+  string client_generated_id = 12;
+
+  int32 execution_status = 3;
+  string text = 4;
+  // required.
+  google.protobuf.Timestamp execution_time = 5;
+  google.protobuf.Duration duration = 6;
+  Repo repo = 7;
+
+  int32 pid = 8;
+  int32 ppid = 9;
+  Environment env = 10;
+}
+
+message Repo {
+  Git git = 1;
+}
+
+message Git {
+  string repo_name = 1;
+}
+
+message Environment {
+  User user = 1;
+  string working_directory = 2;
+  bool debug = 3;
+}
+
+message User {
+  string username = 1;
+  string name = 2;
+}

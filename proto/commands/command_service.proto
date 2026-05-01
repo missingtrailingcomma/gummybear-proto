@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package commands;
+
+option go_package = "github.com/missingtrailingcomma/gummybear-proto/gen/go/commands";
+
+import "commands/command.proto";
+
+message SyncCommandsRequest {
+  SyncToServerRequest sync_to_server_request = 1;
+}
+
+message SyncToServerRequest {
+  BatchCreateCommandsRequest batch_create_commands_request = 1;
+  BatchUpdateCommandsRequest batch_update_commands_request = 2;
+}
+
+message BatchCreateCommandsRequest {
+  repeated CreateCommandRequest requests = 1;
+}
+
+message CreateCommandRequest {
+  Command command = 1;
+}
+
+message BatchUpdateCommandsRequest {
+  repeated UpdateCommandRequest requests = 1;
+}
+
+message UpdateCommandRequest {
+  // Field required for update:
+  // - execution_status
+  // - finish_time
+  //
+  // Other fields are ignored.
+  Command command = 1;
+}
+
+message SyncCommandsResponse {
+  SyncToServerResponse sync_to_server_response = 1;
+}
+
+message SyncToServerResponse {
+
+}
+
+message BatchDeleteCommandsRequest {
+  repeated string command_ids = 1;
+}
+
+message BatchDeleteCommandsResponse {
+  // Commands deleted.
+  repeated Command commands = 1;
+}
+
+message ListCommandsRequest {
+  // Default to 100.
+  int32 page_size = 1;
+  string page_token = 2;
+}
+
+message ListCommandsResponse {
+  repeated Command commands = 1;
+
+  int32 total_count = 3;
+
+  string next_page_token = 2;
+}
+
+message SearchCommandsRequest {
+  string query = 1;
+
+  // Default to 100.
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message SearchCommandsResponse {
+  repeated Command commands = 1;
+
+  string next_page_token = 2;
+}
+
+message PurgeCommandsRequest {}
+
+message PurgeCommandsResponse {
+  int32 purge_count = 1;
+}
