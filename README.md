@@ -7,13 +7,13 @@ Protobuf for Gummybear entities and client and server communications.
 ### Go
 
 ```sh
-go get github.com/missingtrailingcomma/gummybear-proto@v0.0.2
+go get github.com/missingtrailingcomma/gummybear-proto@v0.0.3
 ```
 
 ### TypeScript
 
 ```sh
-pnpm add github.com/missingtrailingcomma/gummybear-proto#v0.0.2
+pnpm add github.com/missingtrailingcomma/gummybear-proto#v0.0.3
 ```
 
 ## Dev
@@ -26,6 +26,6 @@ make generate
 git add .
 git commit -m "TODO"
 
-git tag v0.0.2
+git tag v0.0.3
 git push origin main --tags
 ```

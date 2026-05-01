@@ -4,7 +4,7 @@
 // 	protoc        v7.34.1
 // source: commands/command.proto
 
-package commandpb
+package commands
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -434,7 +434,7 @@ const file_commands_command_proto_rawDesc = "" +
 	"\x05debug\x18\x03 \x01(\bR\x05debug\"6\n" +
 	"\x04User\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04nameBBZ@github.com/missingtrailingcomma/gummybear-proto/gen/go/commandpbb\x06proto3"
+	"\x04name\x18\x02 \x01(\tR\x04nameBAZ?github.com/missingtrailingcomma/gummybear-proto/gen/go/commandsb\x06proto3"
 
 var (
 	file_commands_command_proto_rawDescOnce sync.Once

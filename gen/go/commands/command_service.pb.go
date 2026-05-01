@@ -4,7 +4,7 @@
 // 	protoc        v7.34.1
 // source: commands/command_service.proto
 
-package commandpb
+package commands
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -819,7 +819,7 @@ const file_commands_command_service_proto_rawDesc = "" +
 	"\x14PurgeCommandsRequest\"8\n" +
 	"\x15PurgeCommandsResponse\x12\x1f\n" +
 	"\vpurge_count\x18\x01 \x01(\x05R\n" +
-	"purgeCountBBZ@github.com/missingtrailingcomma/gummybear-proto/gen/go/commandpbb\x06proto3"
+	"purgeCountBAZ?github.com/missingtrailingcomma/gummybear-proto/gen/go/commandsb\x06proto3"
 
 var (
 	file_commands_command_service_proto_rawDescOnce sync.Once
