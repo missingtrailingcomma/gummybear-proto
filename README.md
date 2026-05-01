@@ -21,3 +21,11 @@ pnpm add github.com/missingtrailingcomma/gummybear-proto#v0.0.1
 ```sh
 make generate
 ```
+
+```sh
+git add .
+git commit -m "TODO"
+
+git tag v0.1.0
+git push origin main --tags
+```
